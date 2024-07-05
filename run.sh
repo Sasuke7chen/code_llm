@@ -2,7 +2,7 @@ PATH_TO_EVOL_INSTRUCT=/home/taozhengwei/hf_datasets/magicoder-evol-instruct/data
 MAGICODER_OUTPUT_DIR=output
 MODEL_NAME_OR_PATH=/home/taozhengwei/hf_models/deepseek-coder-6.7b-base
 
-deepspeed --include localhost:0,1,2,5 --master_port=29501 src/magicoder/train.py \
+deepspeed --include localhost:0,1,2,5 --master_port=29501 train.py \
     --use_flash_attention False \
     --model_name_or_path $MODEL_NAME_OR_PATH \
     --max_training_seq_length 1024 \
